@@ -25,7 +25,7 @@ function handle204Info(result, error_code, error_message) {
     console.log(generated_at);
 
     for (let i = 0; i < response.routes.length; i++) {
-        if (response.routes[i]["ref"] === bus) {
+        if (response.routes[i]["route_ref"] === bus) {
             const minutes = response.routes[i]["times"][0].t;
             console.log(minutes);
             const info = new Date((Math.ceil(new Date(generated_at).getTime() / 1000) + minutes * 60) * 1000);
